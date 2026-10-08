@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * =============================================================
+ *  IDENTIDADE VISUAL — tokens de cor
+ * =============================================================
+ *  A identidade ainda não está definida. Para trocar as cores
+ *  do site inteiro, mude só os valores abaixo.
+ *
+ *  IMPORTANTE: as cores são escritas como canais RGB separados
+ *  por espaço (ex.: 255 78 43), e NÃO em hexadecimal. É isso que
+ *  permite usar transparência nas classes (ex.: bg-accent/10).
+ *  Para converter um hex pra esse formato, pegue os valores R G B.
+ *
+ *  As fontes vêm do next/font (ver src/app/layout.tsx), nas
+ *  variáveis --font-sans e --font-display.
+ * =============================================================
+ */
+:root {
+  --color-bg: 255 255 255;
+  --color-surface: 247 246 244;
+  --color-surface-2: 239 237 234;
+  --color-fg: 18 18 18;
+  --color-muted: 107 107 112;
+  --color-border: 230 228 224;
+
+  /* Cor da marca: botões principais e destaques. */
+  --color-accent: 255 78 43;
+  --color-accent-hover: 232 67 31;
+  --color-accent-fg: 255 255 255;
+}
+
+* {
+  border-color: rgb(var(--color-border));
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Âncoras param abaixo do header fixo. */
+section[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+body {
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-fg));
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Respeita quem prefere menos animação. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-5 sm:px-6 lg:px-8;
+  }
+
+  /* Botão principal (CTA) — dirigido pela cor da marca (--color-accent). */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5
+           text-base font-semibold text-accent-fg transition-colors duration-200
+           hover:bg-accent-hover focus-visible:outline focus-visible:outline-2
+           focus-visible:outline-offset-2 focus-visible:outline-accent;
+  }
+
+  /* Botão secundário — contorno discreto (fundo claro). */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-fg/15
+           bg-transparent px-6 py-3.5 text-base font-semibold text-fg transition-colors
+           duration-200 hover:bg-fg/5 focus-visible:outline focus-visible:outline-2
+           focus-visible:outline-offset-2 focus-visible:outline-fg/40;
+  }
+
+  /* Botão de contorno claro — para usar sobre seções escuras. */
+  .btn-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-bg/25
+           bg-transparent px-6 py-3.5 text-base font-semibold text-bg transition-colors
+           duration-200 hover:bg-bg/10 focus-visible:outline focus-visible:outline-2
+           focus-visible:outline-offset-2 focus-visible:outline-bg/50;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-fg/10 bg-surface
+           px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-muted;
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-28;
+  }
+
+  .heading-xl {
+    @apply font-display font-extrabold leading-[1.02] tracking-[-0.02em];
+  }
+
+  /* Conteúdo das páginas legais (Termos / Privacidade). */
+  .legal-content h2 {
+    @apply mt-10 font-display text-xl font-bold text-fg sm:text-2xl;
+  }
+  .legal-content h3 {
+    @apply mt-6 font-display text-lg font-semibold text-fg;
+  }
+  .legal-content p {
+    @apply mt-3;
+  }
+  .legal-content ul {
+    @apply mt-3 list-disc space-y-1.5 pl-5;
+  }
+  .legal-content a {
+    @apply font-medium text-fg underline underline-offset-2;
+  }
+}
