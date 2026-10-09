@@ -50,11 +50,22 @@ const config: Config = {
           "0%, 100%": { boxShadow: "0 0 0 0 rgb(var(--color-accent) / 0.45)" },
           "50%": { boxShadow: "0 0 0 10px rgb(var(--color-accent) / 0)" },
         },
+        // Botão do plano em destaque: "pisca" crescendo com um anel de luz.
+        destaque: {
+          "0%, 100%": { transform: "scale(1)", boxShadow: "0 0 0 0 rgb(var(--color-accent) / 0.6)" },
+          "50%": { transform: "scale(1.045)", boxShadow: "0 0 0 14px rgb(var(--color-accent) / 0)" },
+        },
+        "modal-in": {
+          "0%": { opacity: "0", transform: "translateY(24px) scale(0.97)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.6s ease-out both",
         "slide-up": "slide-up 0.25s ease-out both",
         "pulse-cta": "pulse-cta 2s ease-in-out infinite",
+        destaque: "destaque 1.4s ease-in-out infinite",
+        "modal-in": "modal-in 0.28s cubic-bezier(0.16, 1, 0.3, 1) both",
       },
     },
   },
