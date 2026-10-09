@@ -1,9 +1,12 @@
-# Zuke — Landing Page
+# Zuke — Landing page + plataforma
 
-Landing page do **Zuke**: plataforma de assinatura com curadoria de lojas de roupa,
+**Zuke**: plataforma de assinatura com curadoria de lojas de roupa,
 organizadas por faixa de preço (de R$100 a R$1.000), por R$19,90/mês.
 
-Feita com **Next.js (App Router) + TypeScript + Tailwind CSS**, pronta pra subir na **Vercel**.
+Feita com **Next.js (App Router) + TypeScript + Tailwind CSS + Supabase**, pronta pra subir na **Vercel**.
+
+> 👉 **Pra colocar a plataforma no ar** (Supabase, Resend, webhook da Kiwify e
+> compra de teste), siga o passo a passo em **[PLATAFORMA.md](PLATAFORMA.md)**.
 
 ---
 
@@ -104,7 +107,7 @@ Depois, atualize `url` em `src/config/site.ts` com o domínio final.
 
 ---
 
-## 🧱 Estrutura (pensada pra crescer)
+## 🧱 Estrutura
 
 ```
 src/
@@ -112,16 +115,26 @@ src/
     page.tsx            # a landing (monta as seções na ordem)
     layout.tsx          # fontes, SEO/OpenGraph, Pixel, cookies
     globals.css         # tokens de cor (identidade visual)
-    opengraph-image.tsx # imagem de compartilhamento (gerada automática)
-    termos/             # /termos (texto provisório)
-    privacidade/        # /privacidade (texto provisório)
-    robots.ts, sitemap.ts
-  components/           # Header, Hero, Pricing, FAQ, etc.
-  config/
-    site.ts             # 👈 tudo que você troca fica aqui
+    termos/ privacidade/
+    (auth)/             # /entrar, /primeiro-acesso, /esqueci-senha, /definir-senha
+    app/                # área de membros (protegida): início, /faixa/[valor], /conta
+    admin/              # painel admin: lojas, membros, webhooks, feedbacks
+    sem-acesso/         # pra quem está logado mas sem assinatura ativa
+    auth/               # callback dos links de e-mail e logout
+    api/webhooks/kiwify # recebe os avisos da Kiwify
+  components/           # blocos da landing + app/ + admin/ + ui/
+  config/site.ts        # 👈 nome, preço, checkout, Pixel, contatos
   lib/
-    checkout.ts         # monta o link do checkout com as UTMs
-    analytics.ts        # eventos do Pixel (PageView, InitiateCheckout)
+    kiwify/             # leitura do payload, regras de acesso, assinatura, processamento
+    supabase/           # clientes do Supabase (sessão / servidor)
+    auth.ts             # quem está logado, exige membro, exige admin
+  middleware.ts         # protege /app e /admin (a landing não passa por ele)
+supabase/
+  migrations/           # SQL do banco (tabelas, RLS, has_access)
+  templates/            # e-mails em português (convite, recuperação)
+  seed_exemplos.sql     # lojas fictícias opcionais pra teste
+scripts/
+  simular-kiwify.mjs    # simula todos os eventos da Kiwify (npm run simular:kiwify)
 ```
 
 ### Ordem dos blocos (estrutura de página de vendas)
@@ -145,15 +158,16 @@ A página segue a estrutura do blueprint da análise, adaptada pro Zuke:
 Todos os botões "Assinar" internos **rolam até a oferta**; só o botão da caixa
 de oferta vai pro checkout da Kiwify — assim ninguém paga sem ver preço e garantia.
 
-### Próximas fases (ainda **não** implementadas)
+### Plataforma
 
-O projeto já está organizado pra receber, **no mesmo repositório**:
+- **Login** com e-mail e senha (Supabase Auth), sem app pra baixar.
+- **Área de membros** `/app`: faixas de preço, novidades da semana, busca e filtro por tags.
+- **Webhook da Kiwify** que cria a conta de quem pagou e corta o acesso de quem cancelou,
+  atrasou, foi reembolsado ou deu chargeback — idempotente e com caixa-preta de eventos.
+- **Painel admin** `/admin` (só e-mails em `ADMIN_EMAILS`).
 
-- **Login + banco** com Supabase.
-- **Área de membros** em `/app`.
-- **Webhook da Kiwify** (ex.: `/api/webhooks/kiwify`) que libera o acesso de quem pagou.
-
-As variáveis dessas fases já estão mapeadas em [`.env.example`](.env.example).
+Variáveis de ambiente documentadas em [`.env.example`](.env.example).
+Passo a passo completo em **[PLATAFORMA.md](PLATAFORMA.md)**.
 
 ---
 

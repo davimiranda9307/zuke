@@ -110,6 +110,35 @@ body {
     @apply font-display font-extrabold leading-[1.02] tracking-[-0.02em];
   }
 
+  /* ---------- Plataforma: formulários e cartões ---------- */
+  .label {
+    @apply mb-1.5 block text-sm font-semibold text-fg;
+  }
+  .input {
+    @apply block w-full rounded-xl border border-border bg-bg px-4 py-3 text-base text-fg
+           placeholder:text-muted/70 transition-colors focus:border-fg/40 focus:outline-none
+           focus:ring-2 focus:ring-accent/20 disabled:opacity-60;
+  }
+  .card {
+    @apply rounded-2xl border border-border bg-bg p-5 shadow-soft sm:p-6;
+  }
+  .alert-erro {
+    @apply rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800;
+  }
+  .alert-ok {
+    @apply rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900;
+  }
+  .alert-aviso {
+    @apply rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900;
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full border border-border bg-bg px-3 py-1.5
+           text-sm font-semibold text-muted transition-colors hover:text-fg;
+  }
+  .chip-ativo {
+    @apply border-fg bg-fg text-bg hover:text-bg;
+  }
+
   /* Conteúdo das páginas legais (Termos / Privacidade). */
   .legal-content h2 {
     @apply mt-10 font-display text-xl font-bold text-fg sm:text-2xl;

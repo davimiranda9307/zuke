@@ -29,7 +29,15 @@ export function Header() {
           </a>
         </nav>
 
-        <CTAButton className="!px-5 !py-2.5 text-sm">Assinar</CTAButton>
+        <div className="flex items-center gap-1 sm:gap-2">
+          <Link
+            href="/entrar"
+            className="rounded-full px-3 py-2.5 text-sm font-semibold text-fg/80 transition-colors hover:text-fg"
+          >
+            Entrar
+          </Link>
+          <CTAButton className="!px-5 !py-2.5 text-sm">Assinar</CTAButton>
+        </div>
       </div>
     </header>
   );

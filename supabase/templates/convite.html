@@ -1,0 +1,37 @@
+<!--
+  TEMPLATE: Convite (Supabase → Authentication → Emails → "Invite user")
+  ASSUNTO:  Seu acesso ao Zuke chegou: crie sua senha
+  Cole este HTML no campo "Message body" (Source).
+-->
+<!doctype html>
+<html lang="pt-BR">
+  <body style="margin:0;padding:0;background:#f7f6f4;font-family:Arial,Helvetica,sans-serif;color:#121212;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f7f6f4;padding:32px 16px;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:480px;background:#ffffff;border-radius:20px;padding:32px;">
+            <tr>
+              <td>
+                <div style="display:inline-block;width:40px;height:40px;line-height:40px;text-align:center;border-radius:12px;background:#ff4e2b;color:#ffffff;font-weight:800;font-size:22px;">Z</div>
+                <h1 style="margin:24px 0 8px;font-size:26px;line-height:1.2;font-weight:800;">Boas-vindas ao Zuke! 🎉</h1>
+                <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:#55555a;">
+                  Sua assinatura foi confirmada. Falta só um passo: criar a sua senha pra entrar e ver
+                  as melhores lojas, separadas por quanto você quer gastar.
+                </p>
+                <a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=invite&next=/definir-senha"
+                   style="display:inline-block;background:#ff4e2b;color:#ffffff;text-decoration:none;font-weight:700;font-size:16px;padding:14px 28px;border-radius:999px;">
+                  Criar minha senha
+                </a>
+                <p style="margin:24px 0 0;font-size:13px;line-height:1.6;color:#6b6b70;">
+                  Funciona no celular e no computador, direto no navegador — não precisa baixar nada.
+                  Se o botão não abrir, acesse <strong>{{ .SiteURL }}/primeiro-acesso</strong> e peça um novo link.
+                </p>
+              </td>
+            </tr>
+          </table>
+          <p style="margin:16px 0 0;font-size:12px;color:#9a9aa0;">Você recebeu este e-mail porque assinou o Zuke.</p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -68,6 +68,13 @@ export const siteConfig = {
   checkoutUrl: "https://pay.kiwify.com.br/SEU-LINK-AQUI",
 
   /**
+   * Link onde o assinante gerencia/cancela a assinatura na Kiwify.
+   * [CONFIRMAR] o endereço exato com a Kiwify. Enquanto estiver "",
+   * a página "Minha conta" orienta a pessoa a falar com o suporte.
+   */
+  kiwifyManageUrl: "",
+
+  /**
    * ID do Pixel da Meta (Facebook/Instagram).
    * Deixe "" (vazio) para NÃO carregar o Pixel.
    * PREENCHER com o ID (só números) quando tiver.

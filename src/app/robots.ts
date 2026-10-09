@@ -6,6 +6,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      // Áreas privadas da plataforma ficam fora do Google.
+      disallow: ["/app", "/admin", "/api", "/auth"],
     },
     sitemap: `${siteConfig.url}/sitemap.xml`,
   };
