@@ -77,7 +77,7 @@ export const siteConfig = {
    * PREENCHER com o domínio real depois de publicar na Vercel.
    * Ex.: "https://zuke.com.br"
    */
-  url: "https://zuke.vercel.app",
+  url: "https://zuke-nine.vercel.app",
 
   /** Planos de assinatura (definidos no topo deste arquivo). */
   plans: planos,

@@ -95,7 +95,7 @@ git push -u origin main
 
 **3. Pronto**
 
-A Vercel te dá uma URL (ex.: `zuke.vercel.app`). A partir daí, **todo push pro `main` publica sozinho**.
+A Vercel te dá uma URL (a do Zuke é `zuke-nine.vercel.app`). A partir daí, **todo push pro `main` publica sozinho**.
 
 **4. (Opcional) Domínio próprio**
 
