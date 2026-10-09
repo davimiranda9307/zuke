@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { LegalLayout } from "@/components/LegalLayout";
+import { descreverPlanos } from "@/lib/planos";
 
 export const metadata: Metadata = {
   title: "Termos de Uso",
@@ -37,10 +38,10 @@ export default function TermosPage() {
 
       <h2>3. Assinatura, pagamento e renovação</h2>
       <p>
-        A assinatura custa {siteConfig.price.full}, cobrada de forma recorrente
-        por meio da plataforma de pagamento Kiwify. A renovação é automática a
-        cada ciclo, até que você cancele. [CONFIRMAR: ciclo de cobrança e regras
-        de reajuste de preço.]
+        A assinatura é oferecida nos planos {descreverPlanos()}, cobrados por
+        meio da plataforma de pagamento Kiwify. A renovação é automática ao fim
+        de cada período, até que você cancele. [CONFIRMAR: se todos os planos
+        renovam automaticamente e as regras de reajuste de preço.]
       </p>
 
       <h2>4. Cancelamento e garantia</h2>

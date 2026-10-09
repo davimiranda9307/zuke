@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { PlanosModal } from "@/components/PlanosModal";
 
 /** Moldura das páginas legais (Termos e Privacidade). */
 export function LegalLayout({
@@ -40,6 +41,7 @@ export function LegalLayout({
         </div>
       </main>
       <Footer />
+      <PlanosModal />
     </>
   );
 }

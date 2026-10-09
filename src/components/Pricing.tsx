@@ -1,5 +1,5 @@
 import { siteConfig } from "@/config/site";
-import { SubscribeButton } from "@/components/SubscribeButton";
+import { CTAButton } from "@/components/CTAButton";
 
 const included = [
   "Todas as faixas de preço, de R$100 a R$1.000",
@@ -10,7 +10,7 @@ const included = [
   "Cancele quando quiser, sem multa",
 ];
 
-/* Bloco 09 — Oferta (#oferta). É o ÚNICO ponto que leva ao checkout.
+/* Bloco 09 — Oferta (#oferta). O botão abre o modal com os planos.
    Adaptado pro modelo de assinatura: sem pilha de valor nem preço riscado. */
 export function Pricing() {
   return (
@@ -66,9 +66,9 @@ export function Pricing() {
               ))}
             </ul>
 
-            <SubscribeButton className="mt-8 w-full">
+            <CTAButton className="mt-8 w-full">
               Quero assinar por {siteConfig.price.full}
-            </SubscribeButton>
+            </CTAButton>
 
             <div className="mt-5 flex items-center justify-center gap-2 text-center text-sm text-bg/70">
               <svg className="h-4 w-4 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden>

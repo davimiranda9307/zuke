@@ -1,7 +1,7 @@
 # Zuke — Landing page + plataforma
 
 **Zuke**: plataforma de assinatura com curadoria de lojas de roupa,
-organizadas por faixa de preço (de R$100 a R$1.000), por R$19,90/mês.
+organizadas por faixa de preço (de R$100 a R$1.000). Planos mensal, semestral e anual.
 
 Feita com **Next.js (App Router) + TypeScript + Tailwind CSS + Supabase**, pronta pra subir na **Vercel**.
 
@@ -36,7 +36,7 @@ Abra ele e procure por `PREENCHER`. Itens principais:
 
 | O quê | Onde | Observação |
 |---|---|---|
-| **Link do checkout (Kiwify)** | `checkoutUrl` | Todos os botões "Assinar" levam pra cá. |
+| **Planos e links de checkout (Kiwify)** | `planos` (topo do arquivo) | Nome, preço e link de cada plano. O marcado com `destaque: true` fica no centro do modal, com o botão pulsando. |
 | **Pixel da Meta** | `metaPixelId` | Deixe `""` pra não carregar. Preencha só com os números do ID. |
 | **Instagram / TikTok** | `social` | Deixe `""` pra esconder o link. |
 | **E-mail / WhatsApp de contato** | `contact` | |

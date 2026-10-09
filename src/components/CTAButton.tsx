@@ -1,9 +1,10 @@
+"use client";
+
 import { siteConfig } from "@/config/site";
+import { abrirPlanos } from "@/lib/planos";
 
 type Props = {
   children?: React.ReactNode;
-  /** Âncora de destino (por padrão, a caixa de oferta). */
-  href?: string;
   variant?: "primary" | "secondary" | "light";
   /** Pulsar levemente (hero e fechamento). */
   pulse?: boolean;
@@ -11,13 +12,12 @@ type Props = {
 };
 
 /**
- * Botão de avanço interno. Leva à seção de oferta (#oferta) — NÃO ao checkout.
- * Segue a regra do blueprint: só o botão da caixa de oferta vai pro checkout,
- * então ninguém chega ao pagamento sem ver preço e garantia.
+ * Botão de compra usado em toda a landing: abre o modal de planos.
+ * O href="#oferta" é só o plano B — se o JavaScript não carregar,
+ * o clique ainda leva a pessoa até a seção de oferta.
  */
 export function CTAButton({
   children = `Assinar por ${siteConfig.price.full}`,
-  href = "#oferta",
   variant = "primary",
   pulse = false,
   className = "",
@@ -31,7 +31,11 @@ export function CTAButton({
 
   return (
     <a
-      href={href}
+      href="#oferta"
+      onClick={(e) => {
+        e.preventDefault();
+        abrirPlanos();
+      }}
       className={`${base} ${pulse ? "animate-pulse-cta" : ""} ${className}`.trim()}
     >
       {children}

@@ -10,6 +10,56 @@
  * =============================================================
  */
 
+export type Plano = {
+  id: string;
+  nome: string;
+  /** Preço cobrado no período, sem o "R$" (ex.: "109,99"). */
+  preco: string;
+  /** Quantos meses o período cobre (usado pra calcular o "por mês"). */
+  meses: number;
+  /** Como o período aparece ao lado do preço: "/mês", "/semestre"... */
+  periodo: string;
+  /** Link do checkout desse plano na Kiwify. */
+  checkoutUrl: string;
+  /** Plano em destaque no modal (fica no centro, com o botão pulsando). */
+  destaque?: boolean;
+};
+
+/**
+ * PLANOS — aparecem no modal que abre ao clicar em qualquer botão de compra.
+ * A ORDEM aqui é a ordem na tela: o do meio fica centralizado.
+ * Todos os links recebem as UTMs da visita automaticamente.
+ */
+const planos: Plano[] = [
+  {
+    id: "mensal",
+    nome: "Mensal",
+    preco: "19,99",
+    meses: 1,
+    periodo: "mês",
+    checkoutUrl: "https://pay.kiwify.com.br/oRiZphZ",
+  },
+  {
+    id: "anual",
+    nome: "Anual",
+    preco: "109,99",
+    meses: 12,
+    periodo: "ano",
+    checkoutUrl: "https://pay.kiwify.com.br/0F4UzUh",
+    destaque: true,
+  },
+  {
+    id: "semestral",
+    nome: "Semestral",
+    preco: "59,99",
+    meses: 6,
+    periodo: "semestre",
+    checkoutUrl: "https://pay.kiwify.com.br/UBOmeCY",
+  },
+];
+
+const planoMensal = planos.find((p) => p.meses === 1) ?? planos[0];
+
 export const siteConfig = {
   /** Nome do app, usado em todo lugar (header, títulos, rodapé). */
   name: "Zuke",
@@ -20,7 +70,7 @@ export const siteConfig = {
 
   /** Descrição usada no SEO / compartilhamento (até ~155 caracteres). */
   description:
-    "Pare de perder horas procurando loja no Google. O Zuke reúne as melhores lojas de roupa organizadas por faixa de preço, de R$100 a R$1.000. Por R$19,90/mês.",
+    "Pare de perder horas procurando loja no Google. O Zuke reúne as melhores lojas de roupa organizadas por faixa de preço, de R$100 a R$1.000. A partir de R$19,99/mês.",
 
   /**
    * URL final do site em produção (sem barra no final).
@@ -29,15 +79,18 @@ export const siteConfig = {
    */
   url: "https://zuke.vercel.app",
 
-  /** Preço da assinatura. */
+  /** Planos de assinatura (definidos no topo deste arquivo). */
+  plans: planos,
+
+  /** Preço do plano MENSAL, usado nos textos da landing. Vem dos planos acima. */
   price: {
     /** Valor exibido, sem o "R$". */
-    amount: "19,90",
+    amount: planoMensal.preco,
     /** Símbolo da moeda. */
     currency: "R$",
     /** Período da cobrança. */
     period: "mês",
-    /** Texto completo pronto pra usar: "R$19,90/mês". */
+    /** Texto completo pronto pra usar: "R$19,99/mês". */
     get full() {
       return `${this.currency}${this.amount}/${this.period}`;
     },
@@ -59,13 +112,6 @@ export const siteConfig = {
    * espaço reservado. Preencha com a URL de embed (YouTube, Panda, etc.).
    */
   heroVideoUrl: "",
-
-  /**
-   * Link do checkout externo da Kiwify.
-   * PREENCHER com o link real do seu produto na Kiwify.
-   * Todos os botões "Assinar" levam pra cá, repassando as UTMs da URL.
-   */
-  checkoutUrl: "https://pay.kiwify.com.br/SEU-LINK-AQUI",
 
   /**
    * Link onde o assinante gerencia/cancela a assinatura na Kiwify.

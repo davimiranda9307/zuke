@@ -46,6 +46,11 @@ section[id] {
   scroll-margin-top: 4.5rem;
 }
 
+/* Com um modal aberto, a página de trás não rola. */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
 body {
   background-color: rgb(var(--color-bg));
   color: rgb(var(--color-fg));

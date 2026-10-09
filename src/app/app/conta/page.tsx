@@ -31,7 +31,7 @@ export default async function ContaPage() {
           <div>
             <dt className="text-xs font-semibold uppercase tracking-widest text-muted">Assinatura</dt>
             <dd className="mt-1 font-semibold">
-              {member ? STATUS_LABEL[member.status] : "—"} · {siteConfig.price.full}
+              {member ? STATUS_LABEL[member.status] : "—"}
             </dd>
             {detalhe ? <dd className="mt-1 text-sm text-muted">{detalhe}</dd> : null}
           </div>

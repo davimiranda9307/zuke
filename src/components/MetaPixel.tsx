@@ -5,8 +5,8 @@ import { siteConfig } from "@/config/site";
  * Pixel da Meta.
  * - Só carrega se siteConfig.metaPixelId estiver preenchido.
  * - Dispara PageView automaticamente ao abrir a página.
- * - O evento InitiateCheckout é disparado nos botões "Assinar"
- *   (ver src/lib/analytics.ts e o componente SubscribeButton).
+ * - O evento InitiateCheckout (com valor e plano) é disparado
+ *   quando a pessoa escolhe um plano no modal (ver PlanosModal.tsx).
  */
 export function MetaPixel() {
   const id = siteConfig.metaPixelId?.trim();

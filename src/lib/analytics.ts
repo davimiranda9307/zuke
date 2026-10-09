@@ -17,7 +17,19 @@ export function trackMeta(event: string, params?: Record<string, unknown>): void
   }
 }
 
-/** Evento disparado ao clicar em qualquer botão "Assinar". */
-export function trackInitiateCheckout(): void {
-  trackMeta("InitiateCheckout");
+/** Evento disparado quando a pessoa escolhe um plano e vai pro checkout. */
+export function trackInitiateCheckout(plano?: { id: string; nome: string; valor: number }): void {
+  trackMeta(
+    "InitiateCheckout",
+    plano
+      ? {
+          value: plano.valor,
+          currency: "BRL",
+          content_name: plano.nome,
+          content_ids: [plano.id],
+          content_type: "product",
+          num_items: 1,
+        }
+      : undefined,
+  );
 }

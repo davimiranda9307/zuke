@@ -13,6 +13,7 @@ import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { StickyMobileBar } from "@/components/StickyMobileBar";
+import { PlanosModal } from "@/components/PlanosModal";
 
 /**
  * Ordem dos blocos segue o "Blueprint" da análise (13 blocos), adaptado
@@ -56,6 +57,9 @@ export default function HomePage() {
       <div className="h-16 md:hidden" aria-hidden />
 
       <StickyMobileBar />
+
+      {/* Abre ao clicar em qualquer botão de compra */}
+      <PlanosModal />
     </>
   );
 }

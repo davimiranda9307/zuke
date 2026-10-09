@@ -67,9 +67,9 @@ export default async function SemAcessoPage() {
           {member?.status === "atrasada" && siteConfig.kiwifyManageUrl ? (
             <a href={siteConfig.kiwifyManageUrl} className="btn-primary w-full">Atualizar pagamento</a>
           ) : (
-            <a href={siteConfig.checkoutUrl} className="btn-primary w-full">
-              Assinar por {siteConfig.price.full}
-            </a>
+            <Link href="/?planos=1" className="btn-primary w-full">
+              Ver planos e assinar
+            </Link>
           )}
           <a href={`mailto:${siteConfig.contact.email}`} className="btn-secondary w-full">
             Falar com o suporte

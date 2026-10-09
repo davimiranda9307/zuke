@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { descreverPlanos } from "@/lib/planos";
 
 /* Itens com [CONFIRMAR] têm informação que você ainda precisa definir.
    Depois de decidir, apague o trecho "[CONFIRMAR: ...]" e deixe a resposta. */
@@ -17,7 +18,7 @@ const faqs = [
   },
   {
     q: "A cobrança é recorrente?",
-    a: `Sim. É uma assinatura de ${siteConfig.price.full}, cobrada automaticamente todo mês pela Kiwify enquanto você quiser continuar. [CONFIRMAR: confirmar o ciclo de cobrança exato configurado na Kiwify.]`,
+    a: `Sim. Você escolhe o plano — ${descreverPlanos(false)} — e a Kiwify renova a cobrança automaticamente ao fim de cada período, enquanto você quiser continuar. [CONFIRMAR: confirmar que todos os planos renovam automaticamente na Kiwify.]`,
   },
   {
     q: "Como eu cancelo?",
