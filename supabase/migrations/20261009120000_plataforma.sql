@@ -1,5 +1,5 @@
 -- =============================================================
---  ZUKE — schema da plataforma
+--  CAMAROTE VIP CLOTHES — schema da plataforma
 -- =============================================================
 --  Rode este arquivo UMA vez no SQL Editor do Supabase
 --  (ou com `supabase db push`, se usar a CLI).

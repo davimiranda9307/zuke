@@ -10,7 +10,7 @@ const steps = [
   {
     n: "02",
     title: "Escolhe sua faixa de preço",
-    text: "De R$100 a R$1.000. Você diz quanto quer gastar e o Zuke mostra as melhores lojas daquela faixa.",
+    text: `De R$100 a R$1.000. Você diz quanto quer gastar e o ${siteConfig.name} mostra as melhores lojas daquela faixa.`,
   },
   {
     n: "03",

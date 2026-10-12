@@ -33,7 +33,7 @@ export function PhoneMockup() {
             {/* topo do app */}
             <div className="flex items-center justify-between px-5 pb-3 pt-7">
               <span className="font-display text-base font-extrabold">
-                {siteConfig.name}
+                {siteConfig.shortName}
               </span>
               <span className="h-7 w-7 rounded-full bg-surface-2" />
             </div>

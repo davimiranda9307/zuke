@@ -1,6 +1,6 @@
 /**
  * =============================================================
- *  CONFIGURAÇÃO CENTRAL DO ZUKE
+ *  CONFIGURAÇÃO CENTRAL DO CAMAROTE VIP CLOTHES
  * =============================================================
  *  Este é o ÚNICO arquivo que você precisa editar para trocar
  *  as informações do negócio: nome, preço, link de checkout,
@@ -61,8 +61,14 @@ const planos: Plano[] = [
 const planoMensal = planos.find((p) => p.meses === 1) ?? planos[0];
 
 export const siteConfig = {
-  /** Nome do app, usado em todo lugar (header, títulos, rodapé). */
-  name: "Zuke",
+  /** Nome completo da marca, usado em todo lugar (títulos, textos, rodapé). */
+  name: "Camarote VIP Clothes",
+
+  /**
+   * Versão curta do nome, pra espaços apertados (botões, cabeçalho no celular).
+   * No logo, ela aparece em cima e o resto do nome ("Clothes") vem embaixo, pequeno.
+   */
+  shortName: "Camarote VIP",
 
   /** Frase curta que descreve o produto (usada no SEO e no rodapé). */
   tagline:
@@ -70,13 +76,16 @@ export const siteConfig = {
 
   /** Descrição usada no SEO / compartilhamento (até ~155 caracteres). */
   description:
-    "Pare de perder horas procurando loja no Google. O Zuke reúne as melhores lojas de roupa organizadas por faixa de preço, de R$100 a R$1.000. A partir de R$19,99/mês.",
+    "Pare de perder horas procurando loja no Google. O Camarote VIP Clothes reúne as melhores lojas de roupa organizadas por faixa de preço, de R$100 a R$1.000. A partir de R$19,99/mês.",
 
   /**
    * URL final do site em produção (sem barra no final).
    * PREENCHER com o domínio real depois de publicar na Vercel.
-   * Ex.: "https://zuke.com.br"
+   * Ex.: "https://camarotevipclothes.com.br"
    */
+  // O endereço atual ainda tem o nome antigo. Pra trocar: adicione um domínio
+  // novo na Vercel (Settings → Domains) e atualize aqui, no NEXT_PUBLIC_SITE_URL
+  // da Vercel e no "Site URL" do Supabase.
   url: "https://zuke-nine.vercel.app",
 
   /** Planos de assinatura (definidos no topo deste arquivo). */
@@ -130,14 +139,14 @@ export const siteConfig = {
 
   /** Redes sociais. Deixe "" para esconder o ícone. */
   social: {
-    instagram: "https://instagram.com/zuke", // PREENCHER com o @ real
-    tiktok: "https://tiktok.com/@zuke", // PREENCHER com o @ real
+    instagram: "https://instagram.com/camarotevipclothes", // PREENCHER com o @ real
+    tiktok: "https://tiktok.com/@camarotevipclothes", // PREENCHER com o @ real
   },
 
   /** Contato. */
   contact: {
     /** E-mail de suporte (usado no rodapé e no FAQ). */
-    email: "contato@zuke.com.br", // PREENCHER
+    email: "contato@camarotevipclothes.com.br", // PREENCHER
     /**
      * WhatsApp de suporte (opcional). Só dígitos com DDI+DDD.
      * Deixe "" para esconder. Ex.: "5511999999999"
@@ -148,7 +157,7 @@ export const siteConfig = {
   /** Dados da empresa (rodapé e páginas legais). */
   company: {
     /** Razão social / nome usado nos termos. */
-    legalName: "Zuke", // PREENCHER com a razão social
+    legalName: "Camarote VIP Clothes", // PREENCHER com a razão social
     /** CNPJ formatado. PREENCHER. */
     cnpj: "00.000.000/0001-00",
   },

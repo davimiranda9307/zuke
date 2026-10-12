@@ -25,10 +25,10 @@ const args = Object.fromEntries(
 const RUN = Date.now().toString(36);
 const URL_WEBHOOK = args.url || "http://localhost:3000/api/webhooks/kiwify";
 
-// Sem --email: usa um "apelido" do seu e-mail de admin (voce+zukeXXXX@gmail.com),
+// Sem --email: usa um "apelido" do seu e-mail de admin (voce+camaroteXXXX@gmail.com),
 // que cai na SUA caixa. Assim o teste nunca manda e-mail pra estranhos.
 const admin1 = (process.env.ADMIN_EMAILS || "").split(",")[0]?.trim().toLowerCase();
-const EMAIL_PADRAO = admin1?.includes("@") ? admin1.replace("@", `+zuke${RUN}@`) : `zuke.teste+${RUN}@example.com`;
+const EMAIL_PADRAO = admin1?.includes("@") ? admin1.replace("@", `+camarote${RUN}@`) : `camarote.teste+${RUN}@example.com`;
 const EMAIL = String(args.email || EMAIL_PADRAO).trim().toLowerCase();
 // Usuário de teste gerado automaticamente é apagado no fim (use --manter pra guardar).
 const LIMPAR = Boolean(args.limpar || (!args.email && !args.manter));
@@ -66,7 +66,7 @@ function payload(tipo, { orderId = `ord_${RUN}_1`, orderStatus = "paid", proximo
     created_at: agora,
     updated_at: agora,
     approved_date: agora,
-    Product: { product_id: PRODUCT_ID, product_name: "Zuke" },
+    Product: { product_id: PRODUCT_ID, product_name: "Camarote VIP Clothes" },
     Customer: { full_name: "Cliente Teste", first_name: "Cliente", email: EMAIL.toUpperCase(), mobile: "+5511999999999" },
     Subscription: {
       id: SUB,

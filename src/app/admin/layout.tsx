@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { exigirAdmin } from "@/lib/auth";
-import { Logo } from "@/components/Logo";
+import { BrandMark } from "@/components/BrandMark";
 import { AdminNav } from "@/components/admin/AdminNav";
 
 export const metadata: Metadata = {
@@ -20,8 +20,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <div className="mx-auto max-w-5xl px-4">
           <div className="flex h-14 items-center justify-between">
             <Link href="/admin" className="flex items-center gap-2">
-              <Logo className="h-7 w-7" />
-              <span className="font-display text-lg font-extrabold">{siteConfig.name}</span>
+              <BrandMark tamanho="sm" />
               <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-bold text-accent">admin</span>
             </Link>
             <div className="flex items-center gap-1 text-sm">

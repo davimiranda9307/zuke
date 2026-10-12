@@ -3,7 +3,7 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { exigirMembro, isAdminEmail } from "@/lib/auth";
 import { formatarData } from "@/lib/format";
-import { Logo } from "@/components/Logo";
+import { BrandMark } from "@/components/BrandMark";
 import { FeedbackButton } from "@/components/app/FeedbackButton";
 
 export const metadata: Metadata = {
@@ -20,9 +20,8 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     <div className="min-h-dvh bg-surface">
       <header className="sticky top-0 z-30 border-b border-border/70 bg-bg/90 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-4">
-          <Link href="/app" className="flex items-center gap-2" aria-label="Início">
-            <Logo className="h-7 w-7" />
-            <span className="font-display text-lg font-extrabold tracking-tight">{siteConfig.name}</span>
+          <Link href="/app" aria-label="Início">
+            <BrandMark tamanho="sm" />
           </Link>
           <nav className="flex items-center gap-1 text-sm font-semibold">
             {isAdminEmail(email) ? (

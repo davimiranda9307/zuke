@@ -1,4 +1,4 @@
-# Zuke — Como colocar a plataforma no ar
+# Camarote VIP Clothes — Como colocar a plataforma no ar
 
 Siga **nesta ordem**. Cada passo diz exatamente onde clicar e o que colar.
 Tempo total: uns 40 minutos (mais a espera de DNS do domínio de e-mail).
@@ -13,7 +13,7 @@ Tempo total: uns 40 minutos (mais a espera de DNS do domínio de e-mail).
 ## 1. Criar o projeto no Supabase
 
 1. Entre em https://supabase.com e crie uma conta (pode usar o GitHub).
-2. **New project** → nome `zuke` → crie uma senha forte pro banco (guarde num lugar seguro) → região **South America (São Paulo)** → **Create new project**.
+2. **New project** → nome `camarote-vip-clothes` → crie uma senha forte pro banco (guarde num lugar seguro) → região **South America (São Paulo)** → **Create new project**.
 3. Espere uns 2 minutos até o projeto ficar pronto.
 
 ## 2. Rodar as migrations (criar as tabelas)
@@ -32,11 +32,11 @@ Em **Authentication**:
 1. **Sign In / Providers** → em *User Signups*, **desligue** "Allow new users to sign up".
    (As contas são criadas só pelo sistema, quando alguém paga. Os convites continuam funcionando.)
 2. **URL Configuration**:
-   - **Site URL**: o endereço final do site, ex. `https://zuke.com.br` (ou o `.vercel.app` por enquanto).
+   - **Site URL**: o endereço final do site, ex. `https://camarotevipclothes.com.br` (ou o `.vercel.app` por enquanto).
    - **Redirect URLs** → *Add URL*: `http://localhost:3000/**` e `https://SEU-DOMINIO/**`.
 3. **Emails** (Templates):
-   - **Invite user** → Assunto: `Seu acesso ao Zuke chegou: crie sua senha` → no corpo, cole o conteúdo de [`supabase/templates/convite.html`](supabase/templates/convite.html).
-   - **Reset password** → Assunto: `Zuke: crie uma nova senha` → cole [`supabase/templates/recuperacao.html`](supabase/templates/recuperacao.html).
+   - **Invite user** → Assunto: `Seu acesso ao Camarote VIP Clothes chegou: crie sua senha` → no corpo, cole o conteúdo de [`supabase/templates/convite.html`](supabase/templates/convite.html).
+   - **Reset password** → Assunto: `Camarote VIP Clothes: crie uma nova senha` → cole [`supabase/templates/recuperacao.html`](supabase/templates/recuperacao.html).
    - Salve cada um.
 
 > Os links dos e-mails usam o **Site URL** do passo 2. Se ele estiver errado, os links quebram.
@@ -57,7 +57,7 @@ As outras:
 |---|---|
 | `NEXT_PUBLIC_SITE_URL` | `http://localhost:3000` no seu computador; o domínio final na Vercel |
 | `KIWIFY_WEBHOOK_TOKEN` | você pega no passo 8 (por enquanto invente um texto longo pra testar local) |
-| `KIWIFY_PRODUCT_ID` | opcional; deixe vazio se só vende o Zuke na Kiwify |
+| `KIWIFY_PRODUCT_ID` | opcional; deixe vazio se só vende o Camarote VIP Clothes na Kiwify |
 | `LATE_GRACE_DAYS` | dias de tolerância com pagamento atrasado (padrão `3`) |
 | `ADMIN_EMAILS` | seu e-mail (e de sócios), separados por vírgula |
 
@@ -88,7 +88,7 @@ npm run simular:kiwify
 
 O script simula 14 situações (compra, reenvio duplicado, atraso, renovação, cancelamento com e sem data, reembolso, chargeback, assinatura falsa…) e confere no banco, depois de cada uma, o status e se a pessoa tem acesso. No fim deve aparecer **"Fluxo completo funcionando! ✓"**.
 
-- Por padrão ele usa um apelido do seu e-mail de admin (`voce+zukeXXXX@gmail.com`) e apaga o usuário de teste no fim.
+- Por padrão ele usa um apelido do seu e-mail de admin (`voce+camaroteXXXX@gmail.com`) e apaga o usuário de teste no fim.
 - Pra receber o convite de verdade e testar o login: `npm run simular:kiwify -- --email=seuemail@gmail.com`
 - **Antes do Resend (passo 7)**, o Supabase só envia 2 e-mails por hora e só pra quem é da equipe do projeto. Então é normal o resultado dizer *"conta criada, mas o e-mail de convite FALHOU"* — o sistema criou a conta mesmo assim, e a pessoa pode pedir o link em `/primeiro-acesso`.
 
@@ -97,15 +97,15 @@ O script simula 14 situações (compra, reenvio duplicado, atraso, renovação, 
 O envio padrão do Supabase é só pra teste. Pra mandar e-mail pros clientes:
 
 1. Crie conta em https://resend.com (plano grátis: 3.000 e-mails/mês, 100/dia).
-2. **Domains → Add Domain** → digite seu domínio (ex.: `zuke.com.br`).
+2. **Domains → Add Domain** → digite seu domínio (ex.: `camarotevipclothes.com.br`).
 3. O Resend mostra alguns registros DNS (TXT e MX). Cadastre-os onde o seu domínio está registrado (Registro.br, Cloudflare, Hostinger, Vercel…) e clique em **Verify**. Pode levar de minutos a algumas horas.
 4. **API Keys → Create API Key** → permissão *Sending access* → copie a chave (`re_…`).
 5. No Supabase: **Authentication → Emails → SMTP Settings** → ative **Enable custom SMTP**:
 
    | Campo | Valor |
    |---|---|
-   | Sender email | `nao-responda@zuke.com.br` (precisa ser do domínio verificado) |
-   | Sender name | `Zuke` |
+   | Sender email | `nao-responda@camarotevipclothes.com.br` (precisa ser do domínio verificado) |
+   | Sender name | `Camarote VIP Clothes` |
    | Host | `smtp.resend.com` |
    | Port | `465` |
    | Username | `resend` |
@@ -118,9 +118,9 @@ O envio padrão do Supabase é só pra teste. Pra mandar e-mail pros clientes:
 
 1. Na Kiwify: **Apps → Webhooks → Criar webhook**.
 2. Preencha:
-   - **Nome:** `Zuke plataforma`
+   - **Nome:** `Camarote VIP Clothes plataforma`
    - **URL:** `https://SEU-DOMINIO/api/webhooks/kiwify`
-   - **Produto:** o Zuke
+   - **Produto:** o Camarote VIP Clothes
    - **Gatilhos (eventos):** marque
      - Compra aprovada
      - Compra reembolsada
@@ -132,7 +132,7 @@ O envio padrão do Supabase é só pra teste. Pra mandar e-mail pros clientes:
 
 ## 9. Fazer uma compra de teste
 
-1. Compre o Zuke pelo link da landing com um e-mail seu que **ainda não é membro** (pode ser um apelido: `voce+teste@gmail.com`).
+1. Compre o Camarote VIP Clothes pelo link da landing com um e-mail seu que **ainda não é membro** (pode ser um apelido: `voce+teste@gmail.com`).
 2. Em até 1 minuto:
    - abra `/admin/webhooks` → deve aparecer o evento como **processado**;
    - o e-mail "Crie sua senha" deve chegar.

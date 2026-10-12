@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
-import { Logo } from "@/components/Logo";
+import { BrandMark } from "@/components/BrandMark";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -10,12 +10,7 @@ export function Footer() {
       <div className="container-page py-12">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <div className="flex items-center gap-2">
-              <Logo className="h-8 w-8" />
-              <span className="font-display text-xl font-extrabold">
-                {siteConfig.name}
-              </span>
-            </div>
+            <BrandMark claro />
             <p className="mt-4 text-sm leading-relaxed text-bg/60">
               {siteConfig.tagline}
             </p>

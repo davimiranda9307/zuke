@@ -6,15 +6,15 @@ import { descreverPlanos } from "@/lib/planos";
 const faqs = [
   {
     q: "Como eu recebo o acesso depois de pagar?",
-    a: "Assim que o pagamento é aprovado, você recebe um e-mail do Zuke com o link pra criar sua senha. É só clicar, definir a senha e pronto: você já entra na plataforma pelo navegador do celular ou do computador, sem baixar nada.\n\nNão encontrou o e-mail? Confira a caixa de spam ou acesse a página Primeiro acesso, digite o e-mail usado na compra e a gente reenvia o link na hora.",
+    a: `Assim que o pagamento é aprovado, você recebe um e-mail do ${siteConfig.name} com o link pra criar sua senha. É só clicar, definir a senha e pronto: você já entra na plataforma pelo navegador do celular ou do computador, sem baixar nada.\n\nNão encontrou o e-mail? Confira a caixa de spam ou acesse a página Primeiro acesso, digite o e-mail usado na compra e a gente reenvia o link na hora.`,
   },
   {
     q: "Funciona no celular?",
-    a: "Funciona. O Zuke foi pensado pro celular primeiro: abre no navegador do seu telefone, do tablet ou do computador. É só entrar e usar, na hora.",
+    a: `Funciona. O ${siteConfig.name} foi pensado pro celular primeiro: abre no navegador do seu telefone, do tablet ou do computador. É só entrar e usar, na hora.`,
   },
   {
     q: "Preciso baixar algum aplicativo?",
-    a: "Não. O Zuke é um site que você acessa com seu e-mail e senha.",
+    a: `Não. O ${siteConfig.name} é um site que você acessa com seu e-mail e senha.`,
   },
   {
     q: "A cobrança é recorrente?",

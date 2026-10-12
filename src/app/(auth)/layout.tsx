@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
-import { Logo } from "@/components/Logo";
+import { BrandMark } from "@/components/BrandMark";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -12,9 +12,8 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
   return (
     <div className="flex min-h-dvh flex-col bg-surface">
       <header className="container-page flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2" aria-label={siteConfig.name}>
-          <Logo className="h-8 w-8" />
-          <span className="font-display text-xl font-extrabold tracking-tight">{siteConfig.name}</span>
+        <Link href="/" aria-label={siteConfig.name}>
+          <BrandMark />
         </Link>
         <Link href="/" className="text-sm font-medium text-muted hover:text-fg">
           Voltar ao site

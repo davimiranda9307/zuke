@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { WhyZuke } from "@/components/WhyZuke";
+import { WhyUs } from "@/components/WhyUs";
 import { Comparison } from "@/components/Comparison";
 import { HowItWorks } from "@/components/HowItWorks";
 import { PriceRanges } from "@/components/PriceRanges";
@@ -17,7 +17,7 @@ import { PlanosModal } from "@/components/PlanosModal";
 
 /**
  * Ordem dos blocos segue o "Blueprint" da análise (13 blocos), adaptado
- * ao Zuke (assinatura, sem prova social/números inventados).
+ * ao Camarote VIP Clothes (assinatura, sem prova social/números inventados).
  */
 export default function HomePage() {
   return (
@@ -27,9 +27,9 @@ export default function HomePage() {
       <main>
         {/* 02 · Hero + VSL (escuro) */}
         <Hero />
-        {/* 03 · Por que o Zuke */}
-        <WhyZuke />
-        {/* Comparativo WhatsApp x Zuke (inimigo comum) */}
+        {/* 03 · Por que a gente */}
+        <WhyUs />
+        {/* Comparativo WhatsApp x a gente (inimigo comum) */}
         <Comparison />
         {/* 04 · Como funciona (3 passos) */}
         <HowItWorks />

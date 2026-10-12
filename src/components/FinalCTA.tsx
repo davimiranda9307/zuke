@@ -29,7 +29,7 @@ export function FinalCTA() {
           </p>
           <div className="relative mt-8 flex justify-center">
             <CTAButton pulse className="w-full sm:w-auto">
-              Assinar o {siteConfig.name}
+              Assinar o {siteConfig.shortName}
             </CTAButton>
           </div>
         </div>

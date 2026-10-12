@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { CTAButton } from "@/components/CTAButton";
 
-/* Bloco 05 — Para quem é. Ajuda cada visitante a se enxergar no Zuke.
+/* Bloco 05 — Para quem é. Ajuda cada visitante a se enxergar na plataforma.
    São perfis de compra (não são números inventados). */
 const profiles = [
   {

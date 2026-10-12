@@ -1,6 +1,6 @@
 import { siteConfig } from "@/config/site";
 
-/* Bloco 03 — Por que o Zuke (fundo claro).
+/* Bloco 03 — Por que a gente (fundo claro).
    6 diferenciais, cada um atacando uma dor de quem faz do jeito antigo. */
 const reasons = [
   {
@@ -25,11 +25,11 @@ const reasons = [
   },
   {
     title: "No celular, sem baixar nada",
-    text: "O Zuke é um site. Abre no navegador do celular ou do computador — sem instalar aplicativo nenhum.",
+    text: `O ${siteConfig.name} é um site. Abre no navegador do celular ou do computador — sem instalar aplicativo nenhum.`,
   },
 ];
 
-export function WhyZuke() {
+export function WhyUs() {
   return (
     <section id="por-que" className="section">
       <div className="container-page">

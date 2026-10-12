@@ -1,4 +1,7 @@
-/** Marca do Zuke. Usa a cor da marca (--color-accent) — muda junto com o tema. */
+/**
+ * Monograma "CV" (Camarote VIP). Usa a cor da marca (--color-accent) —
+ * muda junto com o tema. O ícone da aba (src/app/icon.svg) é o mesmo desenho.
+ */
 export function Logo({ className = "" }: { className?: string }) {
   return (
     <svg
@@ -10,10 +13,18 @@ export function Logo({ className = "" }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect width="64" height="64" rx="16" className="fill-accent" />
-      <path
-        d="M20 20h24v6L28 44h16v6H20v-6l16-18H20v-6z"
-        className="fill-accent-fg"
-      />
+      <g
+        className="stroke-accent-fg"
+        strokeWidth="5.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      >
+        {/* C */}
+        <path d="M30.9 24.3A10 10 0 1 0 30.9 39.7" />
+        {/* V */}
+        <path d="M36.5 23 43 41l6.5-18" />
+      </g>
     </svg>
   );
 }

@@ -22,7 +22,7 @@ export function PlanosModal() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    window.__zukePlanos = true;
+    window.__camarotePlanos = true;
 
     const abrir = () => {
       setSearch(window.location.search); // UTMs da visita vão pro checkout
@@ -42,7 +42,7 @@ export function PlanosModal() {
 
     return () => {
       window.removeEventListener(EVENTO_ABRIR_PLANOS, abrir);
-      window.__zukePlanos = false;
+      window.__camarotePlanos = false;
     };
   }, []);
 

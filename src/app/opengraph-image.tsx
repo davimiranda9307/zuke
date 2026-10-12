@@ -39,11 +39,12 @@ export default function OpengraphImage() {
               alignItems: "center",
               justifyContent: "center",
               color: "#fff",
-              fontSize: 36,
+              fontSize: 24,
               fontWeight: 800,
+              letterSpacing: "-0.02em",
             }}
           >
-            Z
+            CV
           </div>
           <div style={{ fontSize: 40, fontWeight: 800, color: INK }}>
             {siteConfig.name}

@@ -1,12 +1,12 @@
 import { siteConfig, type Plano } from "@/config/site";
 
 /** Evento que abre o modal de planos (disparado pelos botões de compra). */
-export const EVENTO_ABRIR_PLANOS = "zuke:abrir-planos";
+export const EVENTO_ABRIR_PLANOS = "camarote:abrir-planos";
 
 declare global {
   interface Window {
     /** true quando o modal de planos está montado na página atual. */
-    __zukePlanos?: boolean;
+    __camarotePlanos?: boolean;
   }
 }
 
@@ -15,7 +15,7 @@ declare global {
  * página futura), leva pra landing já com o modal aberto.
  */
 export function abrirPlanos(): void {
-  if (window.__zukePlanos) {
+  if (window.__camarotePlanos) {
     window.dispatchEvent(new Event(EVENTO_ABRIR_PLANOS));
   } else {
     window.location.href = "/?planos=1";

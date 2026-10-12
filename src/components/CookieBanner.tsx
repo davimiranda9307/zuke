@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const STORAGE_KEY = "zuke-cookie-consent";
+const STORAGE_KEY = "camarote-cookie-consent";
 
 /**
  * Aviso simples de cookies (LGPD). Aparece uma vez; a escolha fica salva

@@ -1,6 +1,6 @@
-# Zuke — Landing page + plataforma
+# Camarote VIP Clothes — Landing page + plataforma
 
-**Zuke**: plataforma de assinatura com curadoria de lojas de roupa,
+**Camarote VIP Clothes**: plataforma de assinatura com curadoria de lojas de roupa,
 organizadas por faixa de preço (de R$100 a R$1.000). Planos mensal, semestral e anual.
 
 Feita com **Next.js (App Router) + TypeScript + Tailwind CSS + Supabase**, pronta pra subir na **Vercel**.
@@ -41,7 +41,7 @@ Abra ele e procure por `PREENCHER`. Itens principais:
 | **Instagram / TikTok** | `social` | Deixe `""` pra esconder o link. |
 | **E-mail / WhatsApp de contato** | `contact` | |
 | **Razão social + CNPJ** | `company` | Aparece no rodapé e nas páginas legais. |
-| **Domínio final** | `url` | Troque depois de publicar (ex.: `https://zuke.com.br`). |
+| **Domínio final** | `url` | Troque depois de publicar (ex.: `https://camarotevipclothes.com.br`). |
 | **Vídeo do hero (VSL)** | `heroVideoUrl` | Deixe `""` para espaço reservado; cole o embed quando tiver. |
 | **Preço / nome / faixas** | demais campos | Já preenchidos; mude se precisar. |
 
@@ -74,7 +74,7 @@ Na pasta do projeto:
 ```bash
 git init
 git add .
-git commit -m "Zuke landing page"
+git commit -m "Camarote VIP Clothes landing page"
 ```
 
 Crie um repositório **vazio** no GitHub (sem README). Depois:
@@ -95,11 +95,11 @@ git push -u origin main
 
 **3. Pronto**
 
-A Vercel te dá uma URL (a do Zuke é `zuke-nine.vercel.app`). A partir daí, **todo push pro `main` publica sozinho**.
+A Vercel te dá uma URL (a do Camarote VIP Clothes é `zuke-nine.vercel.app`). A partir daí, **todo push pro `main` publica sozinho**.
 
 **4. (Opcional) Domínio próprio**
 
-Em **Settings → Domains**, adicione seu domínio (ex.: `zuke.com.br`) e siga as instruções de DNS.
+Em **Settings → Domains**, adicione seu domínio (ex.: `camarotevipclothes.com.br`) e siga as instruções de DNS.
 Depois, atualize `url` em `src/config/site.ts` com o domínio final.
 
 > Não precisa configurar variáveis de ambiente agora. O arquivo `.env.example`
@@ -139,12 +139,12 @@ scripts/
 
 ### Ordem dos blocos (estrutura de página de vendas)
 
-A página segue a estrutura do blueprint da análise, adaptada pro Zuke:
+A página segue a estrutura do blueprint da análise, adaptada pro Camarote VIP Clothes:
 
 1. Header fixo (CTA → oferta)
 2. Hero + vídeo (VSL) — fundo escuro
-3. Por que o Zuke (6 diferenciais)
-4. Comparativo: Grupo de WhatsApp × Zuke
+3. Por que o Camarote VIP Clothes (6 diferenciais)
+4. Comparativo: Grupo de WhatsApp × Camarote VIP Clothes
 5. Como funciona (3 passos)
 6. O que tem dentro / as faixas (R$100–R$1.000)
 7. Para quem é (abas de perfil)

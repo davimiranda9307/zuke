@@ -4,27 +4,27 @@ const rows = [
   {
     label: "Organização",
     whatsapp: "Mensagem solta, tudo misturado",
-    zuke: "Lojas separadas por faixa de preço",
+    nos: "Lojas separadas por faixa de preço",
   },
   {
     label: "Achar uma loja",
     whatsapp: "Rolar o chat sem fim procurando",
-    zuke: "Escolhe a faixa e vê na hora",
+    nos: "Escolhe a faixa e vê na hora",
   },
   {
     label: "Os links",
     whatsapp: "Somem no meio das conversas",
-    zuke: "Sempre no lugar, prontos pra clicar",
+    nos: "Sempre no lugar, prontos pra clicar",
   },
   {
     label: "Curadoria",
     whatsapp: "Qualquer um manda qualquer coisa",
-    zuke: "Seleção feita pra você não errar",
+    nos: "Seleção feita pra você não errar",
   },
   {
     label: "Acesso",
     whatsapp: "Perdeu o grupo, perdeu tudo",
-    zuke: "Entra com e-mail e senha quando quiser",
+    nos: "Entra com e-mail e senha quando quiser",
   },
 ];
 
@@ -54,7 +54,7 @@ export function Comparison() {
             </div>
             <div className="bg-fg p-4 text-center sm:p-5">
               <span className="font-display text-base font-bold text-bg sm:text-lg">
-                {siteConfig.name}
+                {siteConfig.shortName}
               </span>
             </div>
           </div>
@@ -76,7 +76,7 @@ export function Comparison() {
               </div>
               <div className="flex items-start gap-2 border-l border-border bg-accent/[0.04] px-4 py-4 text-sm font-medium text-fg sm:px-5">
                 <IconCheck />
-                <span>{row.zuke}</span>
+                <span>{row.nos}</span>
               </div>
             </div>
           ))}
